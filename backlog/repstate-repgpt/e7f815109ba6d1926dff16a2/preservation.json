@@ -1,0 +1,21 @@
+{
+  "status": "backlog",
+  "sourceRevision": "e7f815109ba6d1926dff16a27fd3e78c423f711abb6d4f55ac93bcb5e717f2c9",
+  "files": {
+    "index.html": "e7f815109ba6d1926dff16a27fd3e78c423f711abb6d4f55ac93bcb5e717f2c9",
+    "desktop.png": "96b16f9c555d443cd520315efbc086f46665ef5c6023be9afc0859fde2e992be",
+    "rendered.html": "13feae583a1c7f6f511173f33b16b79638127f09e473de8a275e124439c4c2a3",
+    "mobile.png": "04c21b8a48bc4ad2710bab4734eb0b62fe631a1d15d9ea6e8f01e0d2ddfdb3f3"
+  },
+  "viewports": {
+    "desktop": {
+      "width": 1440,
+      "height": 900
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844
+    }
+  },
+  "note": "Exact existing RepGPT design, retained unchanged. Analysis copy is illustrative mockup content."
+}
