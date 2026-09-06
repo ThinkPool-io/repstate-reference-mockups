@@ -324,6 +324,7 @@ button:focus-visible, input:focus-visible, select:focus-visible, a:focus-visible
 .completion-card h1 { max-width: 700px; font-size: clamp(52px, 7vw, 88px); }
 .completion-copy { max-width: 650px; color: var(--grey); margin: 20px 0px 28px; font-size: 13px; line-height: 1.5; }
 .session-analytics { border-top: 1px solid var(--line); margin-bottom: 24px; padding-top: 22px; }
+.completion-card > h1 + .session-analytics { margin-top: 28px; }
 .analytics-heading { justify-content: space-between; align-items: baseline; gap: 16px; margin-bottom: 12px; display: flex; }
 .analytics-heading > span { color: var(--grey-dark); font-family: var(--repstate-meta-font); text-transform: uppercase; font-size: 9px; }
 .analytics-grid { border: 1px solid var(--line); background: var(--line); grid-template-columns: repeat(3, minmax(0px, 1fr)); gap: 1px; display: grid; }
@@ -332,6 +333,9 @@ button:focus-visible, input:focus-visible, select:focus-visible, a:focus-visible
 .analytics-metric strong { text-transform: uppercase; font-size: 28px; font-weight: 900; line-height: 1; }
 .analytics-metric small { color: var(--grey-dark); font-family: var(--repstate-meta-font); font-size: 8px; line-height: 1.3; }
 .analytics-metric.analytics-centered { align-items: center; justify-content: center; gap: 12px; text-align: center; }
+.analytics-bump-value { position: relative; }
+.analytics-bump-sign { position: absolute; inset-inline-end: calc(100% + 1px); top: 0; }
+.analytics-bump-number { display: block; }
 .next-move { border: 1px solid var(--red); grid-template-columns: 92px 1fr; gap: 12px; margin-top: 8px; padding: 14px; display: grid; }
 .next-move strong { text-transform: uppercase; font-size: 18px; }
 .next-move p { color: var(--grey); margin: 3px 0px 0px; font-size: 11px; line-height: 1.4; }
@@ -342,7 +346,7 @@ button:focus-visible, input:focus-visible, select:focus-visible, a:focus-visible
 .next-workout-day { color: var(--muted-readable); overflow-wrap: anywhere; font-size: 12px; }
 .next-weight-list { margin: 0px; padding: 0px; list-style: none; }
 .next-weight-list li { border-top: 1px solid var(--line); }
-.next-weight-list label { cursor: pointer; grid-template-columns: 20px minmax(0px, 1fr) auto; align-items: center; gap: 12px; min-height: 72px; padding: 14px 18px; display: grid; }
+.next-weight-list label { cursor: pointer; grid-template-columns: minmax(0px, 1fr) auto 20px; align-items: center; gap: 12px; min-height: 72px; padding: 14px 18px; display: grid; }
 .next-weight-list input { width: 20px; height: 20px; accent-color: var(--red); margin: 0px; }
 .next-weight-name strong { overflow-wrap: anywhere; font-size: 14px; font-weight: 550; line-height: 1.4; display: block; }
 .next-weight-name > small { color: var(--muted-readable); margin-top: 3px; font-size: 11px; display: block; }
@@ -358,9 +362,9 @@ button:focus-visible, input:focus-visible, select:focus-visible, a:focus-visible
 .next-weight-actions .primary-button { border-radius: var(--radius-control); width: 100%; min-height: 50px; }
 @media (max-width: 760px) {
   .next-workout-weights > header, .next-weight-actions { padding: 16px 14px; }
-  .next-weight-list label { grid-template-columns: 20px minmax(0px, 1fr); gap: 8px 12px; padding: 14px; }
-  .next-weight-list input { grid-row: 1 / 3; align-self: center; }
-  .next-weight-change { grid-column: 2; justify-self: start; }
+  .next-weight-list label { grid-template-columns: minmax(0px, 1fr) 20px; gap: 8px 12px; padding: 14px; }
+  .next-weight-list input { grid-column: 2; grid-row: 1 / 3; align-self: center; }
+  .next-weight-change { grid-column: 1; grid-row: 2; justify-self: start; }
 }
 .completion-card > .primary-button { width: 100%; }
 .completion-hold .completion-mark { background: var(--white); color: var(--black); }
@@ -1156,4 +1160,4 @@ button:disabled, .primary-button:disabled, .secondary-button:disabled { cursor: 
 @property --tw-ring-inset { syntax: "*"; inherits: false; }
 @property --tw-ring-offset-width { syntax: "<length>"; inherits: false; initial-value: 0; }
 @property --tw-ring-offset-color { syntax: "*"; inherits: false; initial-value: #fff; }
-@property --tw-ring-offset-shadow { syntax: "*"; inherits: false; initial-value: 0 0 #0000; }</style></head><body class="space_grotesk_412bb0dd-module__vq0YDa__variable space_mono_db713d67-module__-gAs0W__variable inter_2b8b082d-module__gBndNW__variable"><div hidden=""><!--$--><!--/$--></div><!--$--><!--/$--><next-route-announcer style="position: absolute;"></next-route-announcer><main class="app-shell completion-shell"><section class="completion-card completion-hold"><h1>You had more in reserve</h1><p class="completion-copy">Your effort ratings indicate room for progressive overload.</p><div class="session-analytics" aria-label="Session analytics"><div class="analytics-grid"><div class="analytics-metric analytics-centered"><span>Load bumps</span><strong>+0</strong></div><div class="analytics-metric analytics-centered"><span>Working sets</span><strong>3</strong></div><div class="analytics-metric analytics-effort"><span>Effort mix</span><strong>Light work</strong><small>2 light · 1 solid · 0 cooked</small></div></div><section class="next-workout-weights" aria-labelledby="next-workout-title" aria-busy="false"><header><div><span class="eyebrow">Test day</span><h2 id="next-workout-title">Next workout</h2></div></header><ul class="next-weight-list"><li><label><input aria-label="Increase Cable curl to 22.5 kilograms" type="checkbox" checked="" style=""><span class="next-weight-name"><strong>Cable curl</strong></span><span class="next-weight-change"><span>20</span><span class="next-weight-arrow"><svg aria-hidden="true" class="back-arrow-icon" fill="none" viewBox="0 0 24 24"><path d="M18 12H6m5-5-5 5 5 5"></path></svg></span><strong>22.5 <small>kg</small></strong></span></label></li><li><label><input aria-label="Increase Cable fly to 35 kilograms" type="checkbox" checked="" style=""><span class="next-weight-name"><strong>Cable fly</strong></span><span class="next-weight-change"><span>30</span><span class="next-weight-arrow"><svg aria-hidden="true" class="back-arrow-icon" fill="none" viewBox="0 0 24 24"><path d="M18 12H6m5-5-5 5 5 5"></path></svg></span><strong>35 <small>kg</small></strong></span></label></li></ul><div class="next-weight-actions"><button class="primary-button" type="button">Save 2 increases</button></div></section></div><div class="completion-actions"><button class="secondary-button" type="button">Back to training days</button><button class="delete-workout-button" type="button">Delete workout</button></div></section></main></body></html>
+@property --tw-ring-offset-shadow { syntax: "*"; inherits: false; initial-value: 0 0 #0000; }</style></head><body class="space_grotesk_412bb0dd-module__vq0YDa__variable space_mono_db713d67-module__-gAs0W__variable inter_2b8b082d-module__gBndNW__variable"><div hidden=""><!--$--><!--/$--></div><!--$--><!--/$--><next-route-announcer style="position: absolute;"></next-route-announcer><main class="app-shell completion-shell"><section class="completion-card completion-hold"><h1>Ready to go heavier</h1><div class="session-analytics" aria-label="Session analytics"><div class="analytics-grid"><div class="analytics-metric analytics-centered"><span>Load bumps</span><strong class="analytics-bump-value"><span class="analytics-bump-sign">+</span><span class="analytics-bump-number">0</span></strong></div><div class="analytics-metric analytics-centered"><span>Working sets</span><strong>3</strong></div><div class="analytics-metric analytics-effort"><span>Effort mix</span><strong>Light work</strong><small>2 light · 1 solid · 0 cooked</small></div></div><section class="next-workout-weights" aria-labelledby="next-workout-title" aria-busy="false"><header><div><span class="eyebrow">Test day</span><h2 id="next-workout-title">Next workout</h2></div></header><ul class="next-weight-list"><li><label><span class="next-weight-name"><strong>Cable curl</strong></span><span class="next-weight-change"><span>20</span><span class="next-weight-arrow"><svg aria-hidden="true" class="back-arrow-icon" fill="none" viewBox="0 0 24 24"><path d="M18 12H6m5-5-5 5 5 5"></path></svg></span><strong>22.5 <small>kg</small></strong></span><input aria-label="Increase Cable curl to 22.5 kilograms" type="checkbox" checked="" style=""></label></li><li><label><span class="next-weight-name"><strong>Cable fly</strong></span><span class="next-weight-change"><span>30</span><span class="next-weight-arrow"><svg aria-hidden="true" class="back-arrow-icon" fill="none" viewBox="0 0 24 24"><path d="M18 12H6m5-5-5 5 5 5"></path></svg></span><strong>35 <small>kg</small></strong></span><input aria-label="Increase Cable fly to 35 kilograms" type="checkbox" checked="" style=""></label></li></ul><div class="next-weight-actions"><button class="primary-button" type="button">Save 2 increases</button></div></section></div><div class="completion-actions"><button class="secondary-button" type="button">Back to training days</button><button class="delete-workout-button" type="button">Delete workout</button></div></section></main></body></html>
